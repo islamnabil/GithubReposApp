@@ -26,7 +26,6 @@ class NetworkEngine {
             }
             
             
-            
             //MARK:- Check Response status code
             switch httpResponse!.statusCode {
             case 200...299: // Success
