@@ -156,15 +156,6 @@ extension CALayer {
         self.addSublayer(gradientLayer)
     }
 }
-extension UIFont {
-    class func appRegularFontWith( size:CGFloat ) -> UIFont{
-        return  UIFont(name: Constants.App.regularFont, size: size)!
-    }
-    
-    class func appBoldFontWith( size:CGFloat ) -> UIFont{
-        return  UIFont(name: Constants.App.boldFont, size: size)!
-    }
-}
 
 extension UILabel{
     

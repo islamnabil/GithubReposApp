@@ -8,7 +8,13 @@
 import UIKit
 
 class RepoTableCell: UITableViewCell {
-
+    // MARK:- IBoutlets
+    @IBOutlet weak var ownerImage: UIImageView!
+    @IBOutlet weak var ownerNameLabel: UILabel!
+    @IBOutlet weak var repoNameLabel: UILabel!
+    @IBOutlet weak var creationDateLabel: UILabel!
+    
+    // MARK:- View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +25,15 @@ class RepoTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    // MARK:- Configure View
+    func configure(repo:RepositoryModel) {
+        let owner = repo.owner
+        ownerImage.getImage(from: owner.avatarUrl)
+        ownerNameLabel.text = owner.login
+        repoNameLabel.text =  repo.name
+        // MARK:- TODO : creationDateLabel
+    }
+    
     
 }
