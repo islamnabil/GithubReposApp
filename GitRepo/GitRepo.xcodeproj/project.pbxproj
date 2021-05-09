@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		690E408726480475005BE06A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E408626480475005BE06A /* AppDelegate.swift */; };
 		690E408926480475005BE06A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E408826480475005BE06A /* SceneDelegate.swift */; };
-		690E408B26480475005BE06A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E408A26480475005BE06A /* ViewController.swift */; };
 		690E408E26480475005BE06A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690E408C26480475005BE06A /* Main.storyboard */; };
 		690E409126480475005BE06A /* GitRepo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 690E408F26480475005BE06A /* GitRepo.xcdatamodeld */; };
 		690E409326480477005BE06A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690E409226480477005BE06A /* Assets.xcassets */; };
@@ -19,6 +18,9 @@
 		690E40BB264805CB005BE06A /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40BA264805CB005BE06A /* NetworkEngine.swift */; };
 		690E40BF26480AA6005BE06A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40BE26480AA6005BE06A /* HTTPMethod.swift */; };
 		690E40C4264815D3005BE06A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40C3264815D3005BE06A /* Repository.swift */; };
+		690E40CD26482E9A005BE06A /* ReposListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40CC26482E9A005BE06A /* ReposListVC.swift */; };
+		690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40CF26482F46005BE06A /* RepoTableCell.swift */; };
+		690E40D226482F46005BE06A /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690E40D026482F46005BE06A /* RepoTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,6 @@
 		690E408326480475005BE06A /* GitRepo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitRepo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		690E408626480475005BE06A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		690E408826480475005BE06A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		690E408A26480475005BE06A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		690E408D26480475005BE06A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		690E409026480475005BE06A /* GitRepo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitRepo.xcdatamodel; sourceTree = "<group>"; };
 		690E409226480477005BE06A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +58,9 @@
 		690E40BA264805CB005BE06A /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		690E40BE26480AA6005BE06A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		690E40C3264815D3005BE06A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		690E40CC26482E9A005BE06A /* ReposListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListVC.swift; sourceTree = "<group>"; };
+		690E40CF26482F46005BE06A /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
+		690E40D026482F46005BE06A /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,16 +111,14 @@
 		690E408526480475005BE06A /* GitRepo */ = {
 			isa = PBXGroup;
 			children = (
+				690E40C926482DE2005BE06A /* AppDelegate */,
+				690E40C626482D91005BE06A /* Controller */,
+				690E40CA26482DF1005BE06A /* CoreData */,
 				690E40C02648158A005BE06A /* Model */,
 				690E40B9264804FA005BE06A /* Networking */,
-				690E408626480475005BE06A /* AppDelegate.swift */,
-				690E408826480475005BE06A /* SceneDelegate.swift */,
-				690E408A26480475005BE06A /* ViewController.swift */,
-				690E408C26480475005BE06A /* Main.storyboard */,
-				690E409226480477005BE06A /* Assets.xcassets */,
-				690E409426480477005BE06A /* LaunchScreen.storyboard */,
-				690E409726480477005BE06A /* Info.plist */,
-				690E408F26480475005BE06A /* GitRepo.xcdatamodeld */,
+				690E40C826482DA6005BE06A /* Resources */,
+				690E40CB26482E06005BE06A /* Storyboards */,
+				690E40C726482D9A005BE06A /* View */,
 			);
 			path = GitRepo;
 			sourceTree = "<group>";
@@ -154,6 +156,66 @@
 				690E40C3264815D3005BE06A /* Repository.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		690E40C626482D91005BE06A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				690E40CC26482E9A005BE06A /* ReposListVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		690E40C726482D9A005BE06A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				690E40CE26482F24005BE06A /* RepoTableCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		690E40C826482DA6005BE06A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				690E409226480477005BE06A /* Assets.xcassets */,
+				690E409726480477005BE06A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		690E40C926482DE2005BE06A /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				690E408626480475005BE06A /* AppDelegate.swift */,
+				690E408826480475005BE06A /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		690E40CA26482DF1005BE06A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				690E408F26480475005BE06A /* GitRepo.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		690E40CB26482E06005BE06A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				690E409426480477005BE06A /* LaunchScreen.storyboard */,
+				690E408C26480475005BE06A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		690E40CE26482F24005BE06A /* RepoTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				690E40CF26482F46005BE06A /* RepoTableCell.swift */,
+				690E40D026482F46005BE06A /* RepoTableCell.xib */,
+			);
+			path = RepoTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690E40D226482F46005BE06A /* RepoTableCell.xib in Resources */,
 				690E409626480477005BE06A /* LaunchScreen.storyboard in Resources */,
 				690E409326480477005BE06A /* Assets.xcassets in Resources */,
 				690E408E26480475005BE06A /* Main.storyboard in Resources */,
@@ -286,13 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				690E408B26480475005BE06A /* ViewController.swift in Sources */,
 				690E40BB264805CB005BE06A /* NetworkEngine.swift in Sources */,
 				690E40BF26480AA6005BE06A /* HTTPMethod.swift in Sources */,
 				690E40C4264815D3005BE06A /* Repository.swift in Sources */,
 				690E408726480475005BE06A /* AppDelegate.swift in Sources */,
+				690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */,
 				690E409126480475005BE06A /* GitRepo.xcdatamodeld in Sources */,
 				690E408926480475005BE06A /* SceneDelegate.swift in Sources */,
+				690E40CD26482E9A005BE06A /* ReposListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ME3XUBDVMA;
-				INFOPLIST_FILE = GitRepo/Info.plist;
+				INFOPLIST_FILE = GitRepo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,7 +553,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ME3XUBDVMA;
-				INFOPLIST_FILE = GitRepo/Info.plist;
+				INFOPLIST_FILE = GitRepo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

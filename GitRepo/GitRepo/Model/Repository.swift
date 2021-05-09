@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK:- Repository Model
 struct RepositoryModel:Codable {
     let id: Int
     let nodeId: String
@@ -26,6 +27,7 @@ struct RepositoryModel:Codable {
     
 }
 
+//MARK:- Owner Model
 struct OwnerModel: Codable {
     let login: String
     let id: Int
