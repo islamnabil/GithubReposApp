@@ -22,6 +22,7 @@
 		690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40CF26482F46005BE06A /* RepoTableCell.swift */; };
 		690E40D226482F46005BE06A /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690E40D026482F46005BE06A /* RepoTableCell.xib */; };
 		690E40D4264830C1005BE06A /* ImageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D3264830C1005BE06A /* ImageNetwork.swift */; };
+		690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D6264833B4005BE06A /* UIExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		690E40CF26482F46005BE06A /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
 		690E40D026482F46005BE06A /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
 		690E40D3264830C1005BE06A /* ImageNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetwork.swift; sourceTree = "<group>"; };
+		690E40D6264833B4005BE06A /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		690E408526480475005BE06A /* GitRepo */ = {
 			isa = PBXGroup;
 			children = (
+				690E40D526483394005BE06A /* Extensions */,
 				690E40C926482DE2005BE06A /* AppDelegate */,
 				690E40C626482D91005BE06A /* Controller */,
 				690E40CA26482DF1005BE06A /* CoreData */,
@@ -219,6 +222,14 @@
 				690E40D026482F46005BE06A /* RepoTableCell.xib */,
 			);
 			path = RepoTableCell;
+			sourceTree = "<group>";
+		};
+		690E40D526483394005BE06A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				690E40D6264833B4005BE06A /* UIExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +366,7 @@
 				690E40BB264805CB005BE06A /* NetworkEngine.swift in Sources */,
 				690E40BF26480AA6005BE06A /* HTTPMethod.swift in Sources */,
 				690E40C4264815D3005BE06A /* Repository.swift in Sources */,
+				690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */,
 				690E408726480475005BE06A /* AppDelegate.swift in Sources */,
 				690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */,
 				690E409126480475005BE06A /* GitRepo.xcdatamodeld in Sources */,
