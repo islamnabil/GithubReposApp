@@ -27,10 +27,10 @@ class RepoTableCell: UITableViewCell {
     }
     
     // MARK:- Configure View
-    func configure(repo:RepositoryModel) {
+    func configureView(repo:RepositoryModel) {
         let owner = repo.owner
-        ownerImage.getImage(from: owner.avatarUrl)
-        ownerNameLabel.text = owner.login
+        ownerImage.getImage(from: owner?.avatarUrl ?? "")
+        ownerNameLabel.text = owner?.login
         repoNameLabel.text =  repo.name
         // MARK:- TODO : creationDateLabel
     }

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xus-PJ-db5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="150"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fuE-n9-2DS">
                                 <rect key="frame" x="10" y="35" width="80" height="80"/>
@@ -33,16 +33,16 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnj-Qa-gOH">
-                                <rect key="frame" x="98" y="40" width="212" height="70"/>
+                                <rect key="frame" x="98" y="40" width="202" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="gM7-Ot-d5e">
-                                        <rect key="frame" x="0.0" y="0.0" width="212" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo Name " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zop-az-Iql">
-                                        <rect key="frame" x="0.0" y="39.5" width="212" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="34.5" width="202" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -53,14 +53,14 @@
                                     <constraint firstItem="gM7-Ot-d5e" firstAttribute="leading" secondItem="Pnj-Qa-gOH" secondAttribute="leading" id="JdY-Zy-kpH"/>
                                     <constraint firstItem="gM7-Ot-d5e" firstAttribute="top" secondItem="Pnj-Qa-gOH" secondAttribute="top" id="TEX-EX-6xC"/>
                                     <constraint firstItem="zop-az-Iql" firstAttribute="leading" secondItem="Pnj-Qa-gOH" secondAttribute="leading" id="U3b-Kl-aah"/>
-                                    <constraint firstAttribute="bottom" secondItem="zop-az-Iql" secondAttribute="bottom" constant="10" id="c7M-C9-5xy"/>
+                                    <constraint firstAttribute="bottom" secondItem="zop-az-Iql" secondAttribute="bottom" constant="15" id="c7M-C9-5xy"/>
                                     <constraint firstAttribute="trailing" secondItem="gM7-Ot-d5e" secondAttribute="trailing" id="f58-Zd-1At"/>
                                     <constraint firstAttribute="trailing" secondItem="zop-az-Iql" secondAttribute="trailing" id="l2h-Py-U57"/>
                                     <constraint firstItem="zop-az-Iql" firstAttribute="top" secondItem="gM7-Ot-d5e" secondAttribute="bottom" priority="100" constant="10" id="lrd-vX-KVc"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqO-UP-xMm">
-                                <rect key="frame" x="254" y="119" width="56" height="26"/>
+                                <rect key="frame" x="244" y="119" width="56" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGray4Color"/>
                                 <nil key="highlightedColor"/>
@@ -78,10 +78,15 @@
                             <constraint firstItem="fuE-n9-2DS" firstAttribute="leading" secondItem="xus-PJ-db5" secondAttribute="leading" constant="10" id="huB-Je-ORv"/>
                             <constraint firstItem="oqO-UP-xMm" firstAttribute="top" secondItem="Pnj-Qa-gOH" secondAttribute="bottom" constant="9" id="igp-GM-drO"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="xus-PJ-db5" secondAttribute="trailing" id="5SW-sJ-tqQ"/>
+                    <constraint firstAttribute="trailing" secondItem="xus-PJ-db5" secondAttribute="trailing" constant="10" id="5SW-sJ-tqQ"/>
                     <constraint firstItem="xus-PJ-db5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NNN-cr-J3M"/>
                     <constraint firstAttribute="bottom" secondItem="xus-PJ-db5" secondAttribute="bottom" id="fmA-Vd-t5t"/>
                     <constraint firstItem="xus-PJ-db5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vKv-sN-QTo"/>

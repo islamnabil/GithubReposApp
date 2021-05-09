@@ -9,12 +9,12 @@ import Foundation
 
 //MARK:- Repository Model
 struct RepositoryModel:Codable {
-    let id: Int
-    let nodeId: String
-    let name: String
-    let fullName: String
-    let isPrivate: Bool
-    let owner: OwnerModel
+    var id: Int?
+    var nodeId: String?
+    var name: String?
+    var fullName: String?
+    var isPrivate: Bool?
+    var owner: OwnerModel?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -59,7 +59,7 @@ struct OwnerModel: Codable {
         case htmlUrl = "html_url"
         case followersUrl = "followers_url"
         case followingUrl = "following_url"
-        case gistsUrl = "gistsUrl"
+        case gistsUrl = "gists_url"
         case starredUrl = "starred_url"
         case subscriptionsUrl = "subscriptions_url"
         case organizationsUrl = "organizations_url"
