@@ -45,7 +45,10 @@ class ReposListVC: UIViewController {
     private func configureSearchBar(){
         searchBar.delegate = self
     }
-
+    
+    private func getRepo(cellForRowAt indexPath: IndexPath) -> RepositoryModel {
+        return searchActive ? (searchResults?[indexPath.row] ?? RepositoryModel()) : (repos?[indexPath.row] ?? RepositoryModel())
+    }
     
 }
 
@@ -59,7 +62,7 @@ extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableCell.self),for: indexPath) as! RepoTableCell
-        cell.configureView(repo: searchActive ? (searchResults?[indexPath.row] ?? RepositoryModel()) : (repos?[indexPath.row] ?? RepositoryModel()) )
+        cell.configureView(repo: getRepo(cellForRowAt: indexPath))
         cell.selectionStyle = .none
         return cell
     }
@@ -69,7 +72,7 @@ extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+       presentRepoDetails(for: getRepo(cellForRowAt: indexPath))
     }
     
 }
@@ -125,7 +128,6 @@ extension ReposListVC {
     }
 }
 
-//
 class OmnerImagesCache {
     private init(){}
     static var shared = OmnerImagesCache()

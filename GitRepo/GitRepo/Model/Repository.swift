@@ -15,6 +15,7 @@ struct RepositoryModel:Codable {
     var fullName: String?
     var isPrivate: Bool?
     var owner: OwnerModel?
+    var description:String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -23,6 +24,7 @@ struct RepositoryModel:Codable {
         case fullName = "full_name"
         case isPrivate = "private"
         case owner = "owner"
+        case description = "description"
     }
     
 }

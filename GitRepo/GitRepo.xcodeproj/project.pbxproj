@@ -24,6 +24,7 @@
 		690E40D4264830C1005BE06A /* ImageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D3264830C1005BE06A /* ImageNetwork.swift */; };
 		690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D6264833B4005BE06A /* UIExtensions.swift */; };
 		690E40D92649585C005BE06A /* RepoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D82649585C005BE06A /* RepoDetailsVC.swift */; };
+		690E40DB26496361005BE06A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40DA26496361005BE06A /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		690E40D3264830C1005BE06A /* ImageNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetwork.swift; sourceTree = "<group>"; };
 		690E40D6264833B4005BE06A /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		690E40D82649585C005BE06A /* RepoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsVC.swift; sourceTree = "<group>"; };
+		690E40DA26496361005BE06A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				690E40CC26482E9A005BE06A /* ReposListVC.swift */,
 				690E40D82649585C005BE06A /* RepoDetailsVC.swift */,
+				690E40DA26496361005BE06A /* Router.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				690E40BF26480AA6005BE06A /* HTTPMethod.swift in Sources */,
 				690E40C4264815D3005BE06A /* Repository.swift in Sources */,
 				690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */,
+				690E40DB26496361005BE06A /* Router.swift in Sources */,
 				690E408726480475005BE06A /* AppDelegate.swift in Sources */,
 				690E40D92649585C005BE06A /* RepoDetailsVC.swift in Sources */,
 				690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */,
