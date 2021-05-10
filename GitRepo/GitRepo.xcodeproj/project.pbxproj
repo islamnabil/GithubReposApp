@@ -23,6 +23,7 @@
 		690E40D226482F46005BE06A /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690E40D026482F46005BE06A /* RepoTableCell.xib */; };
 		690E40D4264830C1005BE06A /* ImageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D3264830C1005BE06A /* ImageNetwork.swift */; };
 		690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D6264833B4005BE06A /* UIExtensions.swift */; };
+		690E40D92649585C005BE06A /* RepoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D82649585C005BE06A /* RepoDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		690E40D026482F46005BE06A /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
 		690E40D3264830C1005BE06A /* ImageNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetwork.swift; sourceTree = "<group>"; };
 		690E40D6264833B4005BE06A /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		690E40D82649585C005BE06A /* RepoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				690E40CC26482E9A005BE06A /* ReposListVC.swift */,
+				690E40D82649585C005BE06A /* RepoDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				690E40C4264815D3005BE06A /* Repository.swift in Sources */,
 				690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */,
 				690E408726480475005BE06A /* AppDelegate.swift in Sources */,
+				690E40D92649585C005BE06A /* RepoDetailsVC.swift in Sources */,
 				690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */,
 				690E409126480475005BE06A /* GitRepo.xcdatamodeld in Sources */,
 				690E408926480475005BE06A /* SceneDelegate.swift in Sources */,
