@@ -10,6 +10,12 @@ import UIKit
 class ReposListVC: UIViewController {
     //MARK:- Properties
     var repos: [RepositoryModel]?
+    var searchResults: [RepositoryModel]?
+    var searchActive = false {
+        didSet {
+            reposTable.reloadData()
+        }
+    }
     
     // MARK:- IBoutlets
     @IBOutlet weak var reposTable: UITableView!
@@ -39,7 +45,7 @@ class ReposListVC: UIViewController {
     private func configureSearchBar(){
         searchBar.delegate = self
     }
-
+    
 }
 
 
@@ -47,12 +53,12 @@ class ReposListVC: UIViewController {
 extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repos?.count ?? 0
+        return searchActive ?  searchResults?.count ?? 0 : repos?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableCell.self),for: indexPath) as! RepoTableCell
-        cell.configureView(repo: repos?[indexPath.row] ?? RepositoryModel())
+        cell.configureView(repo: searchActive ? (searchResults?[indexPath.row] ?? RepositoryModel()) : (repos?[indexPath.row] ?? RepositoryModel()) )
         cell.selectionStyle = .none
         return cell
     }
@@ -62,14 +68,31 @@ extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
     }
     
 }
 
 // MARK: - UISearchBar Delegate
 extension ReposListVC: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count ?? 0 >= 2 {
+            searchResults = repos?.filter({ (repo) -> Bool in
+                return repo.name?.contains(searchBar.text ?? "") ?? false
+            })
+            searchActive = true
+        }else {
+            searchActive = false
+        }
+       
+    }
     
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text?.removeAll()
+        searchActive = false
+    }
     
 }
 
