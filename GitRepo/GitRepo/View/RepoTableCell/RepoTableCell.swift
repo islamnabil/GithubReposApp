@@ -26,14 +26,15 @@ class RepoTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
     // MARK:- Configure View
     func configureView(repo:RepositoryModel) {
         let owner = repo.owner
-        ownerImage.getImage(from: owner?.avatarUrl ?? "")
+        ownerImage.getImage(from: owner?.avatarUrl ?? "", id: owner?.id ?? Int())
         ownerNameLabel.text = owner?.login
         repoNameLabel.text =  repo.name
         // MARK:- TODO : creationDateLabel
     }
-    
+
     
 }

@@ -45,6 +45,7 @@ class ReposListVC: UIViewController {
     private func configureSearchBar(){
         searchBar.delegate = self
     }
+
     
 }
 
@@ -53,7 +54,7 @@ class ReposListVC: UIViewController {
 extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchActive ?  searchResults?.count ?? 0 : repos?.count ?? 0
+        return searchActive ? searchResults?.count ?? 0 : repos?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,23 +76,35 @@ extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
 
 // MARK: - UISearchBar Delegate
 extension ReposListVC: UISearchBarDelegate {
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        beginEditing()
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        endEditing()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        endEditing()
+    }
+    
+    private func endEditing(){
+        searchBar.text?.removeAll()
+        searchActive = false
+        view.endEditing(true)
+    }
+    
+    private func beginEditing(){
         if searchBar.text?.count ?? 0 >= 2 {
             searchResults = repos?.filter({ (repo) -> Bool in
-                return repo.name?.contains(searchBar.text ?? "") ?? false
+                return repo.name?.lowercased().contains(searchBar.text?.lowercased() ?? "") ?? false
             })
             searchActive = true
         }else {
             searchActive = false
         }
-       
-    }
-    
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text?.removeAll()
-        searchActive = false
     }
     
 }
@@ -112,4 +125,9 @@ extension ReposListVC {
     }
 }
 
-
+//
+class OmnerImagesCache {
+    private init(){}
+    static var shared = OmnerImagesCache()
+    var images = [Int:UIImage]()
+}
