@@ -16,6 +16,7 @@ class ReposListVC: UIViewController {
             reposTable.reloadData()
         }
     }
+    let spinner = PrivateSwiftSpinner.shared
     
     // MARK:- IBoutlets
     @IBOutlet weak var reposTable: UITableView!
@@ -24,6 +25,7 @@ class ReposListVC: UIViewController {
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.show()
         configureReposTable()
         configureSearchBar()
         getReposAPI()
@@ -40,6 +42,7 @@ class ReposListVC: UIViewController {
     private func setData(repos:[RepositoryModel]){
         self.repos = repos
         reposTable.reloadData()
+        spinner.hide()
     }
     
     private func configureSearchBar(){
