@@ -9,6 +9,8 @@ import UIKit
 
 class ReposListVC: UIViewController {
     //MARK:- Properties
+    let spinner = PrivateSwiftSpinner.shared
+    let api:ReposAPIProtocol = ReposAPI()
     var repos: [RepositoryModel]?
     var searchResults: [RepositoryModel]?
     var searchActive = false {
@@ -16,7 +18,6 @@ class ReposListVC: UIViewController {
             reposTable.reloadData()
         }
     }
-    let spinner = PrivateSwiftSpinner.shared
     
     // MARK:- IBoutlets
     @IBOutlet weak var reposTable: UITableView!
@@ -25,7 +26,6 @@ class ReposListVC: UIViewController {
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        spinner.show()
         configureReposTable()
         configureSearchBar()
         getReposAPI()
@@ -42,7 +42,6 @@ class ReposListVC: UIViewController {
     private func setData(repos:[RepositoryModel]){
         self.repos = repos
         reposTable.reloadData()
-        spinner.hide()
     }
     
     private func configureSearchBar(){
@@ -118,12 +117,12 @@ extension ReposListVC: UISearchBarDelegate {
 // MARK: - APIs
 extension ReposListVC {
     private func getReposAPI(){
-        NetworkEngine.request(url: URL(string: "https://api.github.com/repositories")!, method: .get) { (result: Result<[RepositoryModel], Error>) in
+        spinner.show()
+        api.list { (result: Result<[RepositoryModel], NSError>) in
             switch result {
             case .success(let response):
-                DispatchQueue.main.async() { [weak self] in
-                    self?.setData(repos: response)
-                }
+                self.setData(repos: response)
+                self.spinner.hide()
             case .failure(let error):
                 print(error)
             }

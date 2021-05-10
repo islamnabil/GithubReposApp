@@ -8,41 +8,49 @@
 
 import Foundation
 
-class NetworkEngine {
+class NetworkEngine<M:TargetType> {
     
-    class func request<T:Codable>(url:URL, method:HTTPMethod, parameters:[String:Any]?=nil, completion: @escaping (Result<T,Error>) -> ()){
+     func request<T:Codable>(target:M, completion: @escaping (Result<T,Error>) -> ()){
+        var urlComponent = URLComponents(string: "\(target.baseURL)\(target.path)")
         
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = method.rawValue
+        target.params.forEach({ (key: String, value: Any) in
+            urlComponent?.queryItems?.append(URLQueryItem(name: key, value: "\(value)"))
+        })
+        
+        var urlRequest = URLRequest(url: (urlComponent?.url)!)
+        urlRequest.httpMethod = target.method.rawValue
         
         let session = URLSession(configuration: .default)
-        let dataTask = session.dataTask(with: urlRequest) {  data, response, error in
-            let httpResponse = response as? HTTPURLResponse
-            
-            guard error == nil else {
-                completion(.failure(error!))
-                print(error?.localizedDescription ?? "Unknown error")
-                return
-            }
-            
-            
-            //MARK:- Check Response status code
-            switch httpResponse!.statusCode {
-            case 200...299: // Success
-                guard let responseObj = try? JSONDecoder().decode(T.self, from: data!) else {
-                    // ADD Custom Error
+        
+            let dataTask = session.dataTask(with: urlRequest) {  data, response, error in
+                let httpResponse = response as? HTTPURLResponse
+                
+                guard error == nil else {
                     completion(.failure(error!))
-                    
+                    print(error?.localizedDescription ?? "Unknown error")
                     return
                 }
-                completion(.success(responseObj))
-            default:
-                completion(.failure(response as! Error))
+                
+                DispatchQueue.main.async {
+                    //MARK:- Check Response status code
+                    switch httpResponse!.statusCode {
+                    case 200...299: // Success
+                        guard let responseObj = try? JSONDecoder().decode(T.self, from: data!) else {
+                            // ADD Custom Error
+                            completion(.failure(error!))
+                            
+                            return
+                        }
+                        completion(.success(responseObj))
+                    default:
+                        completion(.failure(response as! Error))
+                    }
+                }
+                
             }
             
-        }
-        
-        dataTask.resume()
+            dataTask.resume()
+      
         
     }
  

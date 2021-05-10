@@ -17,7 +17,7 @@
 		690E40A126480477005BE06A /* GitRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40A026480477005BE06A /* GitRepoTests.swift */; };
 		690E40AC26480477005BE06A /* GitRepoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40AB26480477005BE06A /* GitRepoUITests.swift */; };
 		690E40BB264805CB005BE06A /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40BA264805CB005BE06A /* NetworkEngine.swift */; };
-		690E40BF26480AA6005BE06A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40BE26480AA6005BE06A /* HTTPMethod.swift */; };
+		690E40BF26480AA6005BE06A /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40BE26480AA6005BE06A /* TargetType.swift */; };
 		690E40C4264815D3005BE06A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40C3264815D3005BE06A /* Repository.swift */; };
 		690E40CD26482E9A005BE06A /* ReposListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40CC26482E9A005BE06A /* ReposListVC.swift */; };
 		690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40CF26482F46005BE06A /* RepoTableCell.swift */; };
@@ -26,7 +26,10 @@
 		690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D6264833B4005BE06A /* UIExtensions.swift */; };
 		690E40D92649585C005BE06A /* RepoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40D82649585C005BE06A /* RepoDetailsVC.swift */; };
 		690E40DB26496361005BE06A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40DA26496361005BE06A /* Router.swift */; };
-		690E40E326496F79005BE06A /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40E226496F79005BE06A /* SwiftSpinner.swift */; };
+		690E40E326496F79005BE06A /* PrivateSwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40E226496F79005BE06A /* PrivateSwiftSpinner.swift */; };
+		690E40E8264981AE005BE06A /* ReposNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40E7264981AE005BE06A /* ReposNetworking.swift */; };
+		690E40EA264981B8005BE06A /* ReposAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40E9264981B8005BE06A /* ReposAPI.swift */; };
+		690E40EC26498221005BE06A /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40EB26498221005BE06A /* NetworkConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +65,7 @@
 		690E40AB26480477005BE06A /* GitRepoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoUITests.swift; sourceTree = "<group>"; };
 		690E40AD26480477005BE06A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		690E40BA264805CB005BE06A /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
-		690E40BE26480AA6005BE06A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		690E40BE26480AA6005BE06A /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		690E40C3264815D3005BE06A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		690E40CC26482E9A005BE06A /* ReposListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListVC.swift; sourceTree = "<group>"; };
 		690E40CF26482F46005BE06A /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
@@ -71,7 +74,10 @@
 		690E40D6264833B4005BE06A /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		690E40D82649585C005BE06A /* RepoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsVC.swift; sourceTree = "<group>"; };
 		690E40DA26496361005BE06A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		690E40E226496F79005BE06A /* SwiftSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
+		690E40E226496F79005BE06A /* PrivateSwiftSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateSwiftSpinner.swift; sourceTree = "<group>"; };
+		690E40E7264981AE005BE06A /* ReposNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposNetworking.swift; sourceTree = "<group>"; };
+		690E40E9264981B8005BE06A /* ReposAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposAPI.swift; sourceTree = "<group>"; };
+		690E40EB26498221005BE06A /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		75DEFF8568A1C657DB587097 /* Pods-GitRepo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitRepo.release.xcconfig"; path = "Target Support Files/Pods-GitRepo/Pods-GitRepo.release.xcconfig"; sourceTree = "<group>"; };
 		97A68945DA92BFA54864F20A /* Pods_GitRepo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitRepo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF002BBD1BC3E07FA672ACE /* Pods-GitRepo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitRepo.debug.xcconfig"; path = "Target Support Files/Pods-GitRepo/Pods-GitRepo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,9 +169,11 @@
 		690E40B9264804FA005BE06A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				690E40E62649818F005BE06A /* Repos */,
 				690E40BA264805CB005BE06A /* NetworkEngine.swift */,
-				690E40BE26480AA6005BE06A /* HTTPMethod.swift */,
+				690E40BE26480AA6005BE06A /* TargetType.swift */,
 				690E40D3264830C1005BE06A /* ImageNetwork.swift */,
+				690E40EB26498221005BE06A /* NetworkConfig.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -251,9 +259,18 @@
 		690E40E126496F5E005BE06A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				690E40E226496F79005BE06A /* SwiftSpinner.swift */,
+				690E40E226496F79005BE06A /* PrivateSwiftSpinner.swift */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		690E40E62649818F005BE06A /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				690E40E7264981AE005BE06A /* ReposNetworking.swift */,
+				690E40E9264981B8005BE06A /* ReposAPI.swift */,
+			);
+			path = Repos;
 			sourceTree = "<group>";
 		};
 		82039CD8178EC5D49881B592 /* Pods */ = {
@@ -449,17 +466,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				690E40BB264805CB005BE06A /* NetworkEngine.swift in Sources */,
-				690E40BF26480AA6005BE06A /* HTTPMethod.swift in Sources */,
+				690E40BF26480AA6005BE06A /* TargetType.swift in Sources */,
 				690E40C4264815D3005BE06A /* Repository.swift in Sources */,
 				690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */,
+				690E40EA264981B8005BE06A /* ReposAPI.swift in Sources */,
 				690E40DB26496361005BE06A /* Router.swift in Sources */,
+				690E40E8264981AE005BE06A /* ReposNetworking.swift in Sources */,
 				690E408726480475005BE06A /* AppDelegate.swift in Sources */,
-				690E40E326496F79005BE06A /* SwiftSpinner.swift in Sources */,
+				690E40E326496F79005BE06A /* PrivateSwiftSpinner.swift in Sources */,
 				690E40D92649585C005BE06A /* RepoDetailsVC.swift in Sources */,
 				690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */,
 				690E409126480475005BE06A /* GitRepo.xcdatamodeld in Sources */,
 				690E408926480475005BE06A /* SceneDelegate.swift in Sources */,
 				690E40CD26482E9A005BE06A /* ReposListVC.swift in Sources */,
+				690E40EC26498221005BE06A /* NetworkConfig.swift in Sources */,
 				690E40D4264830C1005BE06A /* ImageNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

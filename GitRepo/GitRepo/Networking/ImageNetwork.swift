@@ -16,7 +16,7 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                else { return }
+            else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
                 OmnerImagesCache.shared.images[id] = image
@@ -32,7 +32,7 @@ extension UIImageView {
         }else {
             self.image = UIImage() // To avoid UI arbitrary image changes while scrolling
             guard let url = URL(string: link) else { return }
-            getImage(from: url, contentMode: mode, id: id)
+            self.getImage(from: url, contentMode: mode, id: id)
         }
     }
     
