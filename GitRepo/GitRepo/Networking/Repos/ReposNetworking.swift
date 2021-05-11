@@ -9,6 +9,7 @@ import Foundation
 
 enum ReposNetworking {
     case list
+    case details(path:String)
 }
 
 extension ReposNetworking:TargetType {
@@ -22,19 +23,21 @@ extension ReposNetworking:TargetType {
         switch self {
         case .list:
             return "repositories"
+        case .details(let path):
+            return "repos/\(path)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .list:
+        case .list, .details:
             return .get
         }
     }
     
     var params: [String : Any] {
         switch self {
-        case .list:
+        case .list, .details:
             return ["":""]
         }
     }

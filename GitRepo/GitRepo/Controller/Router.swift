@@ -36,12 +36,12 @@ extension VCs: StoryboardViewController {
 
 /// `UIViewController` extension to present/push ViewControllers
 extension UIViewController {
-    func presentRepoDetails(for repo:RepositoryModel) {
+    func pushRepoDetails(for fullname:String) {
         
         let vc = UIStoryboard(name: VCs.RepoDetailsVC.storyboard, bundle: nil).instantiateViewController(withIdentifier: VCs.RepoDetailsVC.rawValue) as! RepoDetailsVC
         
         /// configure RepoDetailsVC to pass data to `RepoDetailsVC` from another `ViewController`
-        vc.configureView(repo: repo)
-        present(vc, animated: true, completion: nil)
+        vc.configureView(fullName: fullname)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

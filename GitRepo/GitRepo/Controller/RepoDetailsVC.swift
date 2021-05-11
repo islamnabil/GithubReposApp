@@ -11,6 +11,10 @@ class RepoDetailsVC: UIViewController {
 
     //MARK:- Properties
     private var repo:RepositoryModel?
+    private var fullName:String?
+    
+    /// Access ReposAPI class to make HTTP repos requests
+    private let api:ReposAPIProtocol = ReposAPI()
     
     //MARK:- IBOutlets
     @IBOutlet weak var ownerImage: UIImageView!
@@ -21,7 +25,7 @@ class RepoDetailsVC: UIViewController {
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData()
+        getRepoDetailsAPI(fullname: fullName ?? "")
     }
     
     //MARK:- Private methods
@@ -40,10 +44,35 @@ class RepoDetailsVC: UIViewController {
     /// configure RepoDetailsVC to pass data to `RepoDetailsVC` from another `ViewController`
     /// 
     /// - Parameters:
-    ///   - repo: repo object to be displayed
-    public func configureView(repo:RepositoryModel){
+    ///   - fullName: repo object to be displayed
+    public func configureView(fullName:String){
+        self.fullName = fullName
+    }
+    
+    /// Set data after call HTTP request
+    ///
+    /// - Parameters:
+    ///   - repo: Repo to be displayed
+    private func setData(repo:RepositoryModel){
         self.repo = repo
+        setData()
     }
     
     
+}
+
+// MARK: - APIs
+extension RepoDetailsVC {
+    
+    /// getRepoDetailsAPI
+    /// if `success`, then `setData` with fetched repo.
+    private func getRepoDetailsAPI(fullname:String){
+        api.details(fullname:fullname) { (result: Result<RepositoryModel, ErrorResponse>) in
+            switch result {
+            case .success(let response):
+                self.setData(repo: response)
+            case .failure(_):break
+            }
+        }
+    }
 }

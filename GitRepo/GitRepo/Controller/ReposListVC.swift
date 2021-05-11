@@ -99,7 +99,7 @@ extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        /// present Repo Details of current selected repo
-       presentRepoDetails(for: getRepo(cellForRowAt: indexPath))
+        pushRepoDetails(for: getRepo(cellForRowAt: indexPath).fullName ?? "")
     }
     
 }

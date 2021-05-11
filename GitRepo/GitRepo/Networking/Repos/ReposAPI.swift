@@ -9,9 +9,11 @@ import UIKit
 
 protocol ReposAPIProtocol {
     func list(completion: @escaping (Result<[RepositoryModel], ErrorResponse>) -> Void)
+    func details(fullname:String, completion: @escaping (Result<RepositoryModel, ErrorResponse>) -> Void)
 }
 
 class ReposAPI: NetworkEngine<ReposNetworking>, ReposAPIProtocol {
+    
     func list(completion: @escaping (Result<[RepositoryModel], ErrorResponse>) -> Void) {
         self.request(target: .list) { (result: Result<[RepositoryModel], ErrorResponse>) in
             switch result {
@@ -22,4 +24,18 @@ class ReposAPI: NetworkEngine<ReposNetworking>, ReposAPIProtocol {
             }
         }
     }
+    
+    
+    func details(fullname:String, completion: @escaping (Result<RepositoryModel, ErrorResponse>) -> Void) {
+        self.request(target: .details(path: fullname)) { (result: Result<RepositoryModel, ErrorResponse>) in
+            switch result {
+            case .success(let response):
+                completion(.success(response))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    
 }
