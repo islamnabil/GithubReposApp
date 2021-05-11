@@ -10,19 +10,49 @@ import XCTest
 
 class GitRepoTests: XCTestCase {
 
+    /// Access ReposAPI class to make HTTP repos requests
+    var api:ReposAPIProtocol!
+    
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        api = ReposAPI()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        api = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    //MARK:- Test NetworkLayer Executes Success Request
+    func testNetworkLayerExecuteSuccessRequest() {
+        var repos: [RepositoryModel]?
+        
+        let expectation = expectation(description: "GET https://api.github.com/repositories")
+
+        api.list { (result: Result<[RepositoryModel], ErrorResponse>) in
+            switch result {
+            case .success(let response):
+                repos = response
+                XCTAssert(repos?.count ?? 0 > 0)
+                expectation.fulfill()
+            case .failure(_):break
+            }
+        }
+
+        
+        waitForExpectations(timeout: 5){ error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
     }
 
+    
+    
+    
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

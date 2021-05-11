@@ -36,8 +36,9 @@ List of features ready and TODOs for future development
 * Add ReadMe file.
 
 To-do list:
+* Adding more details in Repo details Screen.
 * Implementing Unit tests.
-* Implementing Pagination by using CoreData
+* Implementing Pagination using CoreData
 
 ## Contact
 Created by [@islamnabil](https://github.com/islamnabil) - feel free to contact me!
