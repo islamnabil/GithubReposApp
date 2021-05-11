@@ -28,6 +28,7 @@ pod install
 ## Features
 List of features ready and TODOs for future development
 * Implement Network Layer natively using Swift without using any third party libraries.
+* Add Image downloader layer with caching natively using Swift without using any third party libraries.
 * List public Repositories from [Public Github](https://api.github.com/repositories) with simple design.
 * Add Search feature for public repositories.
 * Add Search feature constraints to be at least matched 2 characters.
