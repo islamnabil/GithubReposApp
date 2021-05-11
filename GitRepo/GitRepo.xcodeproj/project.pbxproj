@@ -140,7 +140,7 @@
 				690E40D526483394005BE06A /* Extensions */,
 				690E40C02648158A005BE06A /* Model */,
 				690E40B9264804FA005BE06A /* Networking */,
-				690E40E126496F5E005BE06A /* Pods */,
+				690E40E126496F5E005BE06A /* PrivatePods */,
 				690E40C826482DA6005BE06A /* Resources */,
 				690E40CB26482E06005BE06A /* Storyboards */,
 				690E40C726482D9A005BE06A /* View */,
@@ -256,12 +256,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		690E40E126496F5E005BE06A /* Pods */ = {
+		690E40E126496F5E005BE06A /* PrivatePods */ = {
 			isa = PBXGroup;
 			children = (
 				690E40E226496F79005BE06A /* PrivateSwiftSpinner.swift */,
 			);
-			path = Pods;
+			path = PrivatePods;
 			sourceTree = "<group>";
 		};
 		690E40E62649818F005BE06A /* Repos */ = {

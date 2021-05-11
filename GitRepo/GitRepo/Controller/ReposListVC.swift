@@ -9,10 +9,21 @@ import UIKit
 
 class ReposListVC: UIViewController {
     //MARK:- Properties
+    
+    /// Access the singleton instance
     let spinner = PrivateSwiftSpinner.shared
+    
+    /// Access ReposAPI class to make HTTP repos requests
     let api:ReposAPIProtocol = ReposAPI()
+    
+    /// The repos array to display at `reposTable` when `searchActive = false`
     var repos: [RepositoryModel]?
+    
+    /// The repos array to display at `reposTable` when `searchActive = true`
     var searchResults: [RepositoryModel]?
+    
+    /// `searchActive = true` when `beginEditing` at `searchBar` and `searchBar.text?.count ?? 0 >= 2`,
+    ///  then display ONLY filtered results at `reposTable`
     var searchActive = false {
         didSet {
             reposTable.reloadData()
@@ -32,6 +43,9 @@ class ReposListVC: UIViewController {
     }
     
     //MARK:- Private Methods
+    
+    /// configureReposTable : `delegate`, `dataSource`
+    /// and make `separatorStyle` to be none instead of singleLine
     private func configureReposTable() {
         reposTable.register(UINib(nibName: "RepoTableCell", bundle: nil), forCellReuseIdentifier: "RepoTableCell")
         reposTable.delegate = self
@@ -39,6 +53,9 @@ class ReposListVC: UIViewController {
         reposTable.separatorStyle = .none
     }
     
+    /// Set data after call HTTP request & reload `reposTable`
+    /// - Parameters:
+    ///   - repos: Repos array to be display at `reposTable`
     private func setData(repos:[RepositoryModel]){
         self.repos = repos
         reposTable.reloadData()
@@ -48,6 +65,12 @@ class ReposListVC: UIViewController {
         searchBar.delegate = self
     }
     
+    /// get Repo object data
+    /// if `searchActive` true it returns object from search results
+    /// if `searchActive` false it returns object from fetched repos from HTTP
+    /// - Parameters:
+    ///   - indexPath: indexPath of current tableView cell
+    /// - Returns: Repo object to the current tableView cell
     private func getRepo(cellForRowAt indexPath: IndexPath) -> RepositoryModel {
         return searchActive ? (searchResults?[indexPath.row] ?? RepositoryModel()) : (repos?[indexPath.row] ?? RepositoryModel())
     }
@@ -59,6 +82,8 @@ class ReposListVC: UIViewController {
 extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        /// if `searchActive` is true it returns `searchResults` count
+        /// if `searchActive` is false it returns `repos` count
         return searchActive ? searchResults?.count ?? 0 : repos?.count ?? 0
     }
     
@@ -74,6 +99,7 @@ extension ReposListVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       /// present Repo Details of current selected repo
        presentRepoDetails(for: getRepo(cellForRowAt: indexPath))
     }
     
@@ -95,12 +121,22 @@ extension ReposListVC: UISearchBarDelegate {
         endEditing()
     }
     
+    
+    /// When end editing at `searchBar`:
+    /// make `searchBar`empty,
+    /// `searchActive = false` to reload `RepoTable` with `repos` array instead of `searchResults` array,
+    /// force view to endEditing to dismiss keyboard from Screen
     private func endEditing(){
         searchBar.text?.removeAll()
         searchActive = false
         view.endEditing(true)
     }
     
+    
+    /// When begin editing at `searchBar`:
+    /// check if `text` in `searchBar` string count > or = 2, then
+    /// set `searchResults` with filtered data from `repos` which contains a substring text of `searchBar`,
+    /// then make `searchActive = true` to reload `RepoTable` with `searchResults` array instead of `repos` array
     private func beginEditing(){
         if searchBar.text?.count ?? 0 >= 2 {
             searchResults = repos?.filter({ (repo) -> Bool in
@@ -116,6 +152,10 @@ extension ReposListVC: UISearchBarDelegate {
 
 // MARK: - APIs
 extension ReposListVC {
+    
+    /// getReposAPI
+    /// if `success`, then `setData` with fetched repos and hide `spinner`.
+    /// if `failure`, pring `error` at console.
     private func getReposAPI(){
         spinner.show()
         api.list { (result: Result<[RepositoryModel], NSError>) in
@@ -130,8 +170,4 @@ extension ReposListVC {
     }
 }
 
-class OmnerImagesCache {
-    private init(){}
-    static var shared = OmnerImagesCache()
-    var images = [Int:UIImage]()
-}
+

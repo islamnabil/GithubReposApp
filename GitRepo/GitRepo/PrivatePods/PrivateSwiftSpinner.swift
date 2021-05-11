@@ -9,13 +9,21 @@ import Foundation
 import SwiftSpinner
 
 class PrivateSwiftSpinner {
+    // MARK: - Singleton
     private init(){}
+    
+    // Access the singleton instance
     static var shared = PrivateSwiftSpinner()
     
-    func show(title:String = "Github Repo") {
+    /// Show the loading spinner
+    ///
+    /// - Parameters:
+    ///   - title: The title shown under the spinner (by default = "Loading")
+    func show(title:String = "Loading") {
         SwiftSpinner.show(title)
     }
     
+    /// Hide the spinner
     func hide() {
         SwiftSpinner.hide()
     }

@@ -7,6 +7,17 @@
 
 import UIKit
 
+
+class OmnerImagesCache {
+    
+    private init(){}
+    static var shared = OmnerImagesCache()
+    var images = [Int:UIImage]()
+    
+}
+
+
+
 extension UIImageView {
     private func getImage(from url: URL, contentMode mode: ContentMode = .scaleAspectFit, id:Int) {
         contentMode = mode
