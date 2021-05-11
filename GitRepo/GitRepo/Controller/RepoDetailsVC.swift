@@ -26,13 +26,20 @@ class RepoDetailsVC: UIViewController {
     
     //MARK:- Private methods
     private func setData(){
+        
+        /// get owner image from `getImage` HTTP function
         ownerImage.getImage(from: repo?.owner?.avatarUrl ?? "", id: repo?.owner?.id ?? Int())
+        
         ownerNameLabel.text = repo?.owner?.login ?? ""
         repoTitleLabel.text = repo?.name ?? ""
         repoDescriptionLabel.text = repo?.description ?? ""
     }
     
     //MARK:- Public methods
+    
+    /// configure RepoDetailsVC to pass data to `RepoDetailsVC` from another `ViewController`
+    /// - Parameters:
+    ///   - repo: repo object to be displayed
     public func configureView(repo:RepositoryModel){
         self.repo = repo
     }
