@@ -33,14 +33,14 @@ class CoreDataManager{
     
     
     // MARK:- Add Request
-    public func addRequest(repo:RepositoryModel) {
+    public func addRepo(repo:RepositoryModel) {
         
         privateMOC.performAndWait {
             let newRepo = RepoCore(context: privateMOC)
-            newRepo.id = Int16(repo.id ?? Int())
+            newRepo.id = Int32(repo.id ?? Int())
             newRepo.name = repo.name ?? ""
             newRepo.repoDesciption = repo.description ?? ""
-            newRepo.ownerId = Int16(repo.owner?.id ?? Int())
+            newRepo.ownerId = Int32(repo.owner?.id ?? Int())
             newRepo.ownerName = repo.owner?.login ?? ""
             newRepo.ownerAvatar = repo.owner?.avatarUrl ?? ""
             saveContext(forContext: privateMOC)
@@ -89,8 +89,24 @@ class CoreDataManager{
     
     
     // MARK:- Get Records
-    func getRepos() -> [RepoCore] {
-        fetchRepos()
+//    func getRepos() -> [RepoCore] {
+//        fetchRepos()
+//        return repos
+//    }
+    
+    func getReposDB(_ fetchOffSet: Int) -> [RepoCore] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.fetchLimit = 10
+        fetchRequest.fetchOffset = fetchOffSet
+        let entityDesc = NSEntityDescription.entity(forEntityName: "RepoCore", in: self.context)
+        fetchRequest.entity = entityDesc
+        let fetchedOjects: [Any]? = try? self.context.fetch(fetchRequest)
+        
+        for i in 0..<(fetchedOjects?.count ?? 0) {
+            let repo: RepoCore? = fetchedOjects?[i] as? RepoCore
+            self.repos.append(repo ?? RepoCore())
+        }
+        
         return repos
     }
     

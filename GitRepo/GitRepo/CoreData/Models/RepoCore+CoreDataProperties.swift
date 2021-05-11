@@ -16,10 +16,10 @@ extension RepoCore {
         return NSFetchRequest<RepoCore>(entityName: "RepoCore")
     }
 
-    @NSManaged public var id: Int16
+    @NSManaged public var id: Int32
     @NSManaged public var name: String?
     @NSManaged public var repoDesciption: String?
-    @NSManaged public var ownerId: Int16
+    @NSManaged public var ownerId: Int32
     @NSManaged public var ownerName: String?
     @NSManaged public var ownerAvatar: String?
 
