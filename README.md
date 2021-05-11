@@ -10,7 +10,7 @@
 
 
 ## Screenshots
-<img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/1.png" width="250" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/2.png" width="250" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/3.png" width="250" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/4.png" width="250" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/5.png" width="250" height="500"> 
+<img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/1.png" width="230" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/2.png" width="230" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/3.png" width="230" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/4.png" width="230" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/5.png" width="230" height="500"> 
 ## Requirements
 * Xcode 10.2+
 * Swift 5+
@@ -38,7 +38,7 @@ List of features ready and TODOs for future development
 
 To-do list:
 * Adding more details in Repo details Screen.
-* Implementing Pagination using CoreData
+* Implementing Pagination using CoreData.
 
 ## Contact
 Created by [@islamnabil](https://github.com/islamnabil) - feel free to contact me!
