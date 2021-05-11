@@ -10,7 +10,7 @@
 
 
 ## Screenshots
-<img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/1.png" width="250" height="370"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/2.png" width="250" height="370"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/3.png" width="250" height="370"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/4.png" width="250" height="370"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/4.png" width="250" height="370"> 
+<img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/1.png" width="250" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/2.png" width="250" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/3.png" width="250" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/4.png" width="250" height="500"> <img src="https://github.com/islamnabil/GithubReposApp/blob/main/ScreenShots/5.png" width="250" height="500"> 
 ## Requirements
 * Xcode 10.2+
 * Swift 5+
@@ -32,11 +32,12 @@ List of features ready and TODOs for future development
 * Add Search feature for public repositories.
 * Add Search feature constraints to be at least matched 2 characters.
 * Add Documentations for the project.
+* Add Unit tests.
+* Add CoreData.
 * Add ReadMe file.
 
 To-do list:
 * Adding more details in Repo details Screen.
-* Implementing Unit tests.
 * Implementing Pagination using CoreData
 
 ## Contact
