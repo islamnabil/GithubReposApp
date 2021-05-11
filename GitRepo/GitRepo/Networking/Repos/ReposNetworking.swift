@@ -21,7 +21,7 @@ extension ReposNetworking:TargetType {
     var path: String {
         switch self {
         case .list:
-            return "repositories"
+            return "repositoriess"
         }
     }
     

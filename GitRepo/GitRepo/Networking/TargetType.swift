@@ -14,15 +14,6 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
-//enum Task {
-//
-//    /// A request with no additional data.
-//    case requestPlain
-//
-//    /// A requests body set with encoded parameters.
-//    case requestParameters(parameters: [String: Any])
-//}
-
 protocol TargetType {
     
     /// The target's base `URL`.

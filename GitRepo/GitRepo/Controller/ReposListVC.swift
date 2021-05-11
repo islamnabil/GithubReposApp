@@ -10,9 +10,6 @@ import UIKit
 class ReposListVC: UIViewController {
     //MARK:- Properties
     
-    /// Access the singleton instance
-    let spinner = PrivateSwiftSpinner.shared
-    
     /// Access ReposAPI class to make HTTP repos requests
     let api:ReposAPIProtocol = ReposAPI()
     
@@ -156,17 +153,13 @@ extension ReposListVC: UISearchBarDelegate {
 extension ReposListVC {
     
     /// getReposAPI
-    /// if `success`, then `setData` with fetched repos and hide `spinner`.
-    /// if `failure`, pring `error` at console.
+    /// if `success`, then `setData` with fetched repos.
     private func getReposAPI(){
-        spinner.show()
-        api.list { (result: Result<[RepositoryModel], NSError>) in
+        api.list { (result: Result<[RepositoryModel], ErrorResponse>) in
             switch result {
             case .success(let response):
                 self.setData(repos: response)
-                self.spinner.hide()
-            case .failure(let error):
-                print(error)
+            case .failure(_):break
             }
         }
     }

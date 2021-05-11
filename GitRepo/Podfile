@@ -3,5 +3,6 @@ use_frameworks!
 target 'GitRepo' do
 
 pod "SwiftSpinner" 
+pod 'NotificationBannerSwift', '~> 3.0.0'
 
 end

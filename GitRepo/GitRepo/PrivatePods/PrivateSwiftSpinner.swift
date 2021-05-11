@@ -22,6 +22,7 @@ class PrivateSwiftSpinner {
     func show(title:String = "Loading") {
         SwiftSpinner.show(title)
     }
+
     
     /// Hide the spinner
     func hide() {
