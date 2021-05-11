@@ -54,6 +54,7 @@ class ReposListVC: UIViewController {
     }
     
     /// Set data after call HTTP request & reload `reposTable`
+    ///
     /// - Parameters:
     ///   - repos: Repos array to be display at `reposTable`
     private func setData(repos:[RepositoryModel]){
@@ -68,6 +69,7 @@ class ReposListVC: UIViewController {
     /// get Repo object data
     /// if `searchActive` true it returns object from search results
     /// if `searchActive` false it returns object from fetched repos from HTTP
+    /// 
     /// - Parameters:
     ///   - indexPath: indexPath of current tableView cell
     /// - Returns: Repo object to the current tableView cell

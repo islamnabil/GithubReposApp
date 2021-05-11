@@ -33,7 +33,7 @@ class RepoTableCell: UITableViewCell {
         ownerImage.getImage(from: owner?.avatarUrl ?? "", id: owner?.id ?? Int())
         ownerNameLabel.text = owner?.login
         repoNameLabel.text =  repo.name
-        // MARK:- TODO : creationDateLabel
+        // TODO:- creationDateLabel
     }
 
     

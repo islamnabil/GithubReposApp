@@ -38,6 +38,7 @@ class RepoDetailsVC: UIViewController {
     //MARK:- Public methods
     
     /// configure RepoDetailsVC to pass data to `RepoDetailsVC` from another `ViewController`
+    /// 
     /// - Parameters:
     ///   - repo: repo object to be displayed
     public func configureView(repo:RepositoryModel){
