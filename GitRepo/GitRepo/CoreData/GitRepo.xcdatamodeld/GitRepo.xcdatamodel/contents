@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="RepoCore" representedClassName="RepoCore" syncable="YES" codeGenerationType="class"/>
+    <entity name="RepoCore" representedClassName="RepoCore" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="ownerAvatar" optional="YES" attributeType="String"/>
+        <attribute name="ownerId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ownerName" optional="YES" attributeType="String"/>
+        <attribute name="repoDesciption" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
-        <element name="RepoCore" positionX="-63" positionY="-18" width="128" height="29"/>
+        <element name="RepoCore" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>

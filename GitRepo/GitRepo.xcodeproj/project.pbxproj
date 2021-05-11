@@ -31,6 +31,11 @@
 		690E40EA264981B8005BE06A /* ReposAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40E9264981B8005BE06A /* ReposAPI.swift */; };
 		690E40EC26498221005BE06A /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40EB26498221005BE06A /* NetworkConfig.swift */; };
 		690E40EE264ABC54005BE06A /* PrivateNotificationBannerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40ED264ABC54005BE06A /* PrivateNotificationBannerSwift.swift */; };
+		690E40F2264ACF8C005BE06A /* RepoCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40F0264ACF8C005BE06A /* RepoCore+CoreDataClass.swift */; };
+		690E40F3264ACF8C005BE06A /* RepoCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40F0264ACF8C005BE06A /* RepoCore+CoreDataClass.swift */; };
+		690E40F4264ACF8C005BE06A /* RepoCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40F1264ACF8C005BE06A /* RepoCore+CoreDataProperties.swift */; };
+		690E40F5264ACF8C005BE06A /* RepoCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40F1264ACF8C005BE06A /* RepoCore+CoreDataProperties.swift */; };
+		690E40F7264ACFA7005BE06A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690E40F6264ACFA7005BE06A /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,9 @@
 		690E40E9264981B8005BE06A /* ReposAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposAPI.swift; sourceTree = "<group>"; };
 		690E40EB26498221005BE06A /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		690E40ED264ABC54005BE06A /* PrivateNotificationBannerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateNotificationBannerSwift.swift; sourceTree = "<group>"; };
+		690E40F0264ACF8C005BE06A /* RepoCore+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepoCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		690E40F1264ACF8C005BE06A /* RepoCore+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepoCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		690E40F6264ACFA7005BE06A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		75DEFF8568A1C657DB587097 /* Pods-GitRepo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitRepo.release.xcconfig"; path = "Target Support Files/Pods-GitRepo/Pods-GitRepo.release.xcconfig"; sourceTree = "<group>"; };
 		97A68945DA92BFA54864F20A /* Pods_GitRepo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitRepo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF002BBD1BC3E07FA672ACE /* Pods-GitRepo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitRepo.debug.xcconfig"; path = "Target Support Files/Pods-GitRepo/Pods-GitRepo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -227,7 +235,9 @@
 		690E40CA26482DF1005BE06A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				690E40EF264ACF80005BE06A /* Models */,
 				690E408F26480475005BE06A /* GitRepo.xcdatamodeld */,
+				690E40F6264ACFA7005BE06A /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -274,6 +284,15 @@
 				690E40E9264981B8005BE06A /* ReposAPI.swift */,
 			);
 			path = Repos;
+			sourceTree = "<group>";
+		};
+		690E40EF264ACF80005BE06A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				690E40F0264ACF8C005BE06A /* RepoCore+CoreDataClass.swift */,
+				690E40F1264ACF8C005BE06A /* RepoCore+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		82039CD8178EC5D49881B592 /* Pods */ = {
@@ -474,9 +493,11 @@
 				690E40D7264833B4005BE06A /* UIExtensions.swift in Sources */,
 				690E40EA264981B8005BE06A /* ReposAPI.swift in Sources */,
 				690E40DB26496361005BE06A /* Router.swift in Sources */,
+				690E40F2264ACF8C005BE06A /* RepoCore+CoreDataClass.swift in Sources */,
 				690E40E8264981AE005BE06A /* ReposNetworking.swift in Sources */,
 				690E408726480475005BE06A /* AppDelegate.swift in Sources */,
 				690E40E326496F79005BE06A /* PrivateSwiftSpinner.swift in Sources */,
+				690E40F4264ACF8C005BE06A /* RepoCore+CoreDataProperties.swift in Sources */,
 				690E40D92649585C005BE06A /* RepoDetailsVC.swift in Sources */,
 				690E40D126482F46005BE06A /* RepoTableCell.swift in Sources */,
 				690E409126480475005BE06A /* GitRepo.xcdatamodeld in Sources */,
@@ -484,6 +505,7 @@
 				690E408926480475005BE06A /* SceneDelegate.swift in Sources */,
 				690E40CD26482E9A005BE06A /* ReposListVC.swift in Sources */,
 				690E40EC26498221005BE06A /* NetworkConfig.swift in Sources */,
+				690E40F7264ACFA7005BE06A /* CoreDataManager.swift in Sources */,
 				690E40D4264830C1005BE06A /* ImageNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +514,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690E40F5264ACF8C005BE06A /* RepoCore+CoreDataProperties.swift in Sources */,
+				690E40F3264ACF8C005BE06A /* RepoCore+CoreDataClass.swift in Sources */,
 				690E40A126480477005BE06A /* GitRepoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
